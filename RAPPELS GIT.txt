@@ -29,6 +29,9 @@ git checkout <nom_branch>
 git add <repertoire à ajouter>
 [Ajoute les fichiers souhaités, ceux qui ont été modifiés par vos soins]
 
+git status
+[Permet de voir ce qui a été ajouté]
+
 git commit -m "Commit nom_branche"
 [Prépare un espace local pour l'envoyer en ligne par la suite]
 
