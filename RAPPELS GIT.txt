@@ -1,0 +1,55 @@
+Pour chaque étape, suivez les instructions de haut en bas.
+
+POUR COMMENCER:
+
+Se connecter sur GitHub puis aller sur : https://github.com/settings/emails
+Keep my adress private = false 
+[cela évitera des erreurs]
+
+Sur votre Bureau, faire Maj + Clic Droit -> Lancer Windows Powershell
+
+Sur Windows Powershell :
+
+git config --global user.name "pseudo GitHub"
+git config --global user.email "email GitHub"
+[permet de s'identifier]
+
+git clone https://github.com/Destroyal/ARTEM_QUEST_United.git
+[cela importe le dossier ARTEM_QUEST_United sur le bureau]
+
+VOUS EFFECTUEZ UNE MODIFICATION SUR LE PROJET, COMMENT ENVOYER VOTRE VERSION EN LIGNE ?
+Pour éviter de tout placer maintenant sur la branche principale du projet, pour mieux travailler en parallèle, il faut créer une nouvelle branche (copie de la branche principale sur laquelle travailler) 
+
+git branch <nom_branche>
+[cela créer une nouvelle branche <nom_branche>]
+
+git checkout <nom_branch>
+[permet de se déplacer sur la branche <nom_branche> (il peut s'agir de master)]
+
+git add <repertoire à ajouter>
+[Ajoute les fichiers souhaités, ceux qui ont été modifiés par vos soins]
+
+git commit -m "Commit nom_branche"
+[Prépare un espace local pour l'envoyer en ligne par la suite]
+
+git push --set-upstream origin <nom_branche>
+[Envoie la nouvelle branche et vos fichiers sur le Git commun, le -set-upstream origin <nom_branche> ne se fait que la première fois quand on génère la branche]
+
+POUR FUSIONNER AVEC LE MASTER QUAND C'EST BON
+
+git checkout <nom_branche>
+[On se place au niveau de <nom_branche> pour ajouter les fichiers correspondants]
+
+git add / git commit
+[On ajoute des fichiers / prépare le commit sur <nom_branche>]
+
+git checkout master
+[On revient sur le master]
+
+git merge <nom_branche>
+[On fusionne la branche master et <nom_branche>. Cela veut dire que master recevra les éléments commit de <nom_branche> au prochain push]
+
+git push
+[On push le tout, la branche master reçoit tout ce qui a été commit sur <nom_branche>. Attention conflits possibles ! ]
+
+
