@@ -8,6 +8,11 @@ TagManager:
   - Gold
   - enemy
   - Item
+  - Cloud
+  - DarkCloud
+  - Bound
+  - Coin
+  - Life
   layers:
   - Default
   - TransparentFX
@@ -17,9 +22,9 @@ TagManager:
   - UI
   - 
   - 
+  - BG
   - 
-  - 
-  - 
+  - CA
   - 
   - 
   - 
@@ -59,4 +64,13 @@ TagManager:
     locked: 0
   - name: breakable
     uniqueID: 1136578557
+    locked: 0
+  - name: CA
+    uniqueID: 867437847
+    locked: 0
+  - name: BG
+    uniqueID: 3923842015
+    locked: 0
+  - name: FG
+    uniqueID: 2957839257
     locked: 0

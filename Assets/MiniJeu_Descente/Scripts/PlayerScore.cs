@@ -6,20 +6,20 @@ public class PlayerScore : MonoBehaviour
 {
 
     public static int CoinCount = 0;
-    public static int LifeCount = 0;
+    public static int LifeCount = 1;
     public static int score = 0;
     // Start is called before the first frame update
     public AudioClip CoinSound;
     public AudioClip LifeSound;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -29,8 +29,9 @@ public class PlayerScore : MonoBehaviour
             var cs = Camera.main.GetComponent<CameraScript>();
             cs.enabled = false;
             transform.localPosition = new Vector3(1000, 1000, 0);
-            GameController.Instance.ShowGameOver(score,CoinCount);
+            //GameController.Instance.ShowGameOver(score,CoinCount);
             LifeCount--;
+            //GameController.Instance.SetLifeCount(LifeCount);
             GameManager.Instance.CheckGameState(LifeCount, CoinCount, score);
         }
         if (other.gameObject.tag == "Bound")
@@ -40,6 +41,7 @@ public class PlayerScore : MonoBehaviour
             transform.localPosition = new Vector3(1000, 1000, 0);
             //GameController.Instance.ShowGameOver(score, CoinCount);
             LifeCount--;
+            //GameController.Instance.SetLifeCount(LifeCount);
             GameManager.Instance.CheckGameState(LifeCount, CoinCount, score);
         }
     }
@@ -53,7 +55,7 @@ public class PlayerScore : MonoBehaviour
 
             GameController.Instance.SetCoinCount(CoinCount);
 
-            score += 200;
+            score += 200;// one coin = 200pts
             GameController.Instance.SetScore(score);
 
         }
@@ -63,7 +65,7 @@ public class PlayerScore : MonoBehaviour
             target.gameObject.SetActive(false);
             AudioSource.PlayClipAtPoint(LifeSound, transform.position);
             GameController.Instance.SetLifeCount(LifeCount);
-            score += 500;
+            score += 500;// one head = 500pts
             GameController.Instance.SetScore(score);
         }
     }

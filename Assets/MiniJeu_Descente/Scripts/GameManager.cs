@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //单例模式
     public static GameManager Instance;
     public int lifeCount1;
     public int coinCount1;
     public int score1;
-
+    public bool gameRestart;
+    //public bool gameStart;
     void Start()
     {
         if (Instance != null)
@@ -35,22 +37,48 @@ public class GameManager : MonoBehaviour
         }
     }
     */
-    private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    void OnEnable()
     {
-        if (scene.name == "Gameplay")
+        //Tell our 'OnLevelFinishedLoading' function to start listening for a scene change as soon as this script is enabled.
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+    void OnDisable()
+    {
+        //Tell our 'OnLevelFinishedLoading' function to stop listening for a scene change as soon as this script is disabled. Remember to always have an unsubscription for every delegate you subscribe to!
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "GamePlay")
         {
-            GameController.Instance.SetScore(score1);
-            GameController.Instance.SetLifeCount(lifeCount1);
-            GameController.Instance.SetCoinCount(coinCount1);
-            PlayerScore.LifeCount = lifeCount1;
-            PlayerScore.CoinCount = coinCount1;
-            PlayerScore.score = score1;
+            if (gameRestart)
+            {
+                GameController.Instance.SetScore(score1);
+                GameController.Instance.SetLifeCount(lifeCount1);
+                GameController.Instance.SetCoinCount(coinCount1);
+                PlayerScore.LifeCount = lifeCount1;
+                PlayerScore.CoinCount = coinCount1;
+                PlayerScore.score = score1;
+            }
+            else
+            {
+                GameController.Instance.SetScore(0);
+                GameController.Instance.SetLifeCount(1);
+                GameController.Instance.SetCoinCount(0);
+                PlayerScore.LifeCount = 1;
+                PlayerScore.CoinCount = 0;
+                PlayerScore.score = 0;
+            }
         }
     }
     public void CheckGameState(int lifeCount, int coinCount, int score)
     {
         if (lifeCount < 0)
         {
+            //gameStart = false;
+            gameRestart = false;
             var easy = PlayerPrefs.GetInt(GamePreference.Easy);
             if (easy == 1)
             {
@@ -100,9 +128,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lifeCount1 = lifeCount;
-            coinCount1 = coinCount;
-            score1 = score;
+            this.lifeCount1 = lifeCount;
+            this.coinCount1 = coinCount;
+            this.score1 = score;
+            //gameStart = false;
+            gameRestart = true;
             SceneManager.LoadScene("GamePlay");
         }
     }

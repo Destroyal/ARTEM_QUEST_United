@@ -27,8 +27,9 @@ public class GameController : MonoBehaviour
     {
         lifeCount.text = "X" + l;
     }
-    public void SetCoinCount(int c){
-        coinCount.text ="X"+c;
+    public void SetCoinCount(int c)
+    {
+        coinCount.text = "X" + c;
     }
     public void SetScore(int s)
     {
@@ -63,7 +64,8 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void ShowGameOver(int score,int coin){
+    public void ShowGameOver(int score, int coin)
+    {
         Time.timeScale = 0;
         gameoverpanel.SetActive(true);
         ScoreText.text = score.ToString();

@@ -15,7 +15,7 @@ public class HighScore : MonoBehaviour
     }
     void Init()
     {
-        var easy=PlayerPrefs.GetInt(GamePreference.Easy);
+        var easy = PlayerPrefs.GetInt(GamePreference.Easy);
         if (easy == 1)
         {
             var s = PlayerPrefs.GetInt(GamePreference.EasyHighScore);
@@ -48,7 +48,7 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Back()
