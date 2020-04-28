@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MiniJeu_FlappyBird/Scenes/Game.unity
+- path: Assets/MapCreation/Scenes/Main Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
