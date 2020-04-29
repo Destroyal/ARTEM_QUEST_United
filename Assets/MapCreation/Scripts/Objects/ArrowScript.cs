@@ -63,7 +63,7 @@ public class ArrowScript : MonoBehaviour
         {
             //StopAllCoroutines();
             //other.GetComponent<Enemy>().TakeDamage(1);
-            other.GetComponent<Enemy>().Knock(other.GetComponent<Rigidbody2D>(), 1f, 1);
+            //other.GetComponent<Enemy>().Knock(other.GetComponent<Rigidbody2D>(), 1f, 1);
             Destroy(this.gameObject);
         }
         if (other.CompareTag("breakable"))

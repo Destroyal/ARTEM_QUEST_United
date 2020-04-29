@@ -23,9 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Vector3 change;
     private Animator animator;
-    public VectorValue startingPosition;
     public bool canInteract;
-    public FloatValue currentHealth;
     public Signal playerHealthSignal;
     public GameObject inventoryCanvas;
 
@@ -39,8 +37,6 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerState.walk;
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-        transform.position = startingPosition.initialValue;
-        currentHealth.RuntimeValue = currentHealth.initialValue;
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);    }
 
@@ -100,17 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Knock(float knockTime, float damage)
     {
-        currentHealth.RuntimeValue -= damage;
-        if (currentHealth.RuntimeValue > 0)
-        {
-            playerHealthSignal.Raise();
-            StartCoroutine(KnockCo(knockTime));
-        } else
-        {
-            playerHealthSignal.Raise();
-            this.gameObject.SetActive(false);
-            SceneManager.LoadScene("Main Scene");
-        }
+        
     }
 
     private IEnumerator KnockCo(float knockTime)

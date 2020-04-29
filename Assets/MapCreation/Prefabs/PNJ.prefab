@@ -16,8 +16,6 @@ GameObject:
   - component: {fileID: 1995531750582346230}
   - component: {fileID: 1995531750582346231}
   - component: {fileID: 1995531750582346220}
-  - component: {fileID: 1995531750582346223}
-  - component: {fileID: 1995531750582346222}
   m_Layer: 0
   m_Name: PNJ
   m_TagString: Untagged
@@ -54,6 +52,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -169,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogContainer: {fileID: 0}
+  Nom: {fileID: 0}
   DialogText: {fileID: 0}
   vitesseInit: 0.03
 --- !u!61 &1995531750582346231
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Notif: {fileID: 8426269201286246676}
+  Name: 
   dialog:
     m_sentences:
     - "Oui, c\u2019est nous les grosses moulas et y\u2019a d\u2019la weed, y\u2019a
@@ -223,12 +224,18 @@ MonoBehaviour:
       finir bourr\xE9\r\nTu t\u2019es vue avec moi mais c\u2019\xE9tait qu\u2019un
       r\xEAve"
     - "Tellement de folles, tellement d\u2019oseille depuis qu\u2019j\u2019suis c\xE9l\xE8bre\r\nLa
-      bo\xEEte ne m\u2019appartient pas, si je veux, je l\u2019ach\xE8te\r\nFaut qu\u2019tu
-      coop\xE8res, si tu veux pas, bah prends ton Uber"
-    - "Bae, ne reviens pas, prends tes affaires, rentre chez toi (Sheguey)\r\nNon,
-      ne reviens pas, prends tes affaires, rentre chez toi (Skch)\r\nBae, ne reviens
-      pas, prends tes affaires, rentre chez toi (Sheguey)\r\nNon, ne reviens pas,
-      prends tes affaires, rentre chez toi"
+      bo\xEEte ne m\u2019appartient pas, si je veux, je l\u2019ach\xE8te\r\nFaut
+      qu\u2019tu coop\xE8res, si tu veux pas, bah prends ton Uber"
+    - 'Bae, ne reviens pas, prends tes affaires, rentre chez toi (Sheguey)
+
+      Non,
+      ne reviens pas, prends tes affaires, rentre chez toi (Skch)
+
+      Bae, ne
+      reviens pas, prends tes affaires, rentre chez toi (Sheguey)
+
+      Non, ne
+      reviens pas, prends tes affaires, rentre chez toi'
     - "Oui, c\u2019est nous les grosses moulas et y\u2019a d\u2019la weed, y\u2019a
       du Jack\r\nJ\u2019suis fonce-d\xE9 toute la night et na-na-ni, na-na-na\r\nM\u2019raconte
       pas tes salades, c\u2019est toi tu viens, soit tu t\u2019tailles\r\nNous on
@@ -243,64 +250,16 @@ MonoBehaviour:
     - "\xC7a y est, tu reconnois\r, c\u2019est l\u2019sheguey, la moula\r\nLa khoula,
       les zoulas, b\xE9b\xE9, non, ne les \xE9coute pas\r\nJ\u2019l\u2019ai bais\xE9e,
       j\u2019suis coupable\r\nIntrouvable comme Sosa"
-    - "Bae, ne reviens pas, prends tes affaires, rentre chez toi (Sheguey)\r\nNon,
-      ne reviens pas, prends tes affaires, rentre chez toi (Skch)\r\nBae, ne reviens
-      pas, prends tes affaires, rentre chez toi (Sheguey)\r\nNon, ne reviens pas,
-      prends tes affaires, rentre chez toi"
---- !u!114 &1995531750582346223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995531750582346228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007a766121d0f7b43a54c0c6047f2f54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 4cca49ec80f42a6429da6dc4c36239af, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1995531750582346220}
-        m_MethodName: OnSpeaking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1995531750582346222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995531750582346228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007a766121d0f7b43a54c0c6047f2f54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: c72f97404c5375d4ca5708fe2f1004f9, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1995531750582346220}
-        m_MethodName: OffSpeaking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    - 'Bae, ne reviens pas, prends tes affaires, rentre chez toi (Sheguey)
+
+      Non,
+      ne reviens pas, prends tes affaires, rentre chez toi (Skch)
+
+      Bae, ne
+      reviens pas, prends tes affaires, rentre chez toi (Sheguey)
+
+      Non, ne
+      reviens pas, prends tes affaires, rentre chez toi'
 --- !u!1001 &1995531748895910552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,11 +267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1995531750582346221}
     m_Modifications:
-    - target: {fileID: 8016850148830174092, guid: fdd4150e5f8bc3848922f5651dc5fe15,
-        type: 3}
-      propertyPath: m_Name
-      value: SpeakNotif
-      objectReference: {fileID: 0}
     - target: {fileID: 8016850148830174083, guid: fdd4150e5f8bc3848922f5651dc5fe15,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -367,6 +321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016850148830174092, guid: fdd4150e5f8bc3848922f5651dc5fe15,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeakNotif
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd4150e5f8bc3848922f5651dc5fe15, type: 3}
