@@ -13,6 +13,7 @@ public class Door_Trigger : MonoBehaviour
     public GameObject end;
     public Image image;
     private bool is_OK;
+    public GameObject fadeOut;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class Door_Trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goal.is_interacting && is_OK)
+        if (goal.is_interacting && is_OK && !(goal.can_leave || goal.leave))
         {
             nom.SetActive(true);
             nom.GetComponent<Text>().text = list[0];
@@ -47,6 +48,12 @@ public class Door_Trigger : MonoBehaviour
                 goal.is_interacting = false;
                 movement.is_stunned = false;
             }
+        }
+
+        if (goal.is_interacting && is_OK && goal.can_leave)
+        {
+            goal.leave = true;
+            fadeOut.SetActive(true);
         }
     }
 
