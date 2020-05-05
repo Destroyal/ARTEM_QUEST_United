@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: be7498a4045a51741b1ab85e2c2042b6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - sol: {instanceID: 0}
+  - mur: {instanceID: 0}
+  - tile1: {instanceID: 0}
+  - tile2: {fileID: 11400000, guid: 28798ea83438a304c932dd0674023295, type: 2}
+  - tile3: {fileID: 11400000, guid: 28798ea83438a304c932dd0674023295, type: 2}
+  - tile4: {fileID: 11400000, guid: 28798ea83438a304c932dd0674023295, type: 2}
+  - tile5: {instanceID: 0}
+  - tile6: {instanceID: 0}
+  - tile7: {instanceID: 0}
+  - player: {instanceID: 0}
+  - camera: {instanceID: 0}
+  - map: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
