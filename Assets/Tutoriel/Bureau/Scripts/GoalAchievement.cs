@@ -19,6 +19,18 @@ public class GoalAchievement : MonoBehaviour
     public bool must_click;
     public bool has_clicked;
 
+    public bool must_input;
+    public bool has_input;
+
+    public bool must_useless;
+    public bool has_useless;
+
+    public bool must_important;
+    public bool has_important;
+
+    public bool can_leave;
+    public bool leave;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +48,18 @@ public class GoalAchievement : MonoBehaviour
 
         must_click = false;
         has_clicked = false;
+
+        must_input = false;
+        has_input = false;
+
+        must_useless = false;
+        has_useless = false;
+
+        must_important = false;
+        has_important = false;
+
+        can_leave = false;
+        leave = false;
     }
 
     // Update is called once per frame
