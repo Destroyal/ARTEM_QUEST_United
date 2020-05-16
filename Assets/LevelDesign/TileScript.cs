@@ -15,7 +15,6 @@ public class TileScript : MonoBehaviour
     public Tile tile5;
     public Tile tile6;
     public Tile tile7;
-    public Camera camera;
     public TextAsset map;
     string[,] array2D = new string[10, 10];
     string[] lines;
@@ -27,8 +26,8 @@ public class TileScript : MonoBehaviour
         lines = map.text.Split("\n"[0]);
         char[] splitters = {'\t'};
         line = lines[0].Split(splitters, System.StringSplitOptions.RemoveEmptyEntries);
-        Debug.Log(line.Length);
-        Debug.Log(line[0]);
+        //Debug.Log(line.Length);
+        //Debug.Log(line[0]);
 
 
         string[,] mapArray = new string[lines.Length, line.Length];
@@ -41,7 +40,7 @@ public class TileScript : MonoBehaviour
             }
         }
 
-        Debug.Log(mapArray[0,0]);
+        //Debug.Log(mapArray[0,0]);
 
         for (int i = 0; i < mapArray.GetLength(1); i++)
         {

@@ -15,12 +15,17 @@ public class QuestAchievements : MonoBehaviour
 
     public bool RunBoyRun; //L'intitulé de la quête apparaît : Trouver le trésor d'ARTEM avant la prochaine lune
 
-    public bool must_equip; // Le joueur se voit proposer d'équipper un certain équipement
-    public bool has_equip; // 
+    //Achievement
+    public bool carte_etu;
+    public bool carte_izly;
+    public bool corde;
+    public bool tuba;
+    public bool jouet;
+    public bool code;
+    public bool cle;
 
     //Achievement
-    public 
-
+    //public float time;
 
     // Start is called before the first frame update
     void Start()
