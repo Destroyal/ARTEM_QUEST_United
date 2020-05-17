@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/LevelDesign/Example.unity
+- path: Assets/FullQuest/Test.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

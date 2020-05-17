@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BonhommeLAC : MonoBehaviour
 {
@@ -12,13 +13,19 @@ public class BonhommeLAC : MonoBehaviour
     private bool done;
     private List<string> dialog1;
     private List<string> dialog2;
+    private bool dialog;
+
+    public Image img;
+    public Text nom;
+    public Text corps;
+    public Image end;
 
     void Start()
     {
         dialog1 = new List<string>();
         dialog2 = new List<string>();
-        dialog1.Add("Bonhomme LAC : Not completed");
-        dialog2.Add("Bonhomme LAC : Completed");
+        dialog1.Add("Ouin ! Ouin ! J'ai perdu mon jouet au fond du lac.");
+        dialog2.Add("Vous ... Vous avez récupéré mon jouet ! Merci beaucoup, prenez cette carte IZLY en échange !");
     }
 
     // Update is called once per frame
@@ -26,14 +33,15 @@ public class BonhommeLAC : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && is_OK)
         {
+            dialog = true;
             if (done)
             {
-                Debug.Log(dialog2[0]);
+                //Debug.Log(dialog2[0]);
                 scriptA.carte_izly = true;
             }
             else
             {
-                Debug.Log(dialog1[0]);
+                //Debug.Log(dialog1[0]);
             }
 
         }
@@ -46,6 +54,23 @@ public class BonhommeLAC : MonoBehaviour
         {
             done = false;
         }
+
+        if (dialog)
+        {
+            img.enabled = true;
+            nom.enabled = true;
+            corps.enabled = true;
+            end.enabled = true;
+            nom.text = "Bonhomme LAC";
+            if (done) {
+                corps.text = dialog2[0];
+            }
+            else
+            {
+                corps.text = dialog1[0];
+            }
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D obj)
@@ -56,5 +81,11 @@ public class BonhommeLAC : MonoBehaviour
     void OnTriggerExit2D(Collider2D obj)
     {
         is_OK = false;
+        dialog = false;
+
+        img.enabled = false;
+        nom.enabled = false;
+        corps.enabled = false;
+        end.enabled = false;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProfesseurARTEM : MonoBehaviour
 {
@@ -12,13 +13,19 @@ public class ProfesseurARTEM : MonoBehaviour
     private bool done;
     private List<string> dialog1;
     private List<string> dialog2;
+    private bool dialog;
+
+    public Image img;
+    public Text nom;
+    public Text corps;
+    public Image end;
 
     void Start()
     {
         dialog1 = new List<string>();
         dialog2 = new List<string>();
         dialog1.Add("Professeur ARTEM : Not completed");
-        dialog2.Add("Professeur ARTEM : Completed");
+        dialog2.Add("Bonjour. Profitez bien de votre carte d'étudiant ARTEM !");
     }
 
     // Update is called once per frame
@@ -26,10 +33,25 @@ public class ProfesseurARTEM : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && is_OK)
         {
-            Debug.Log(dialog2[0]);
+            dialog = true;
+            //Debug.Log(dialog2[0]);
             done = true;
             scriptA.carte_etu = true;
               
+        }
+
+        if (dialog)
+        {
+            img.enabled = true;
+            nom.enabled = true;
+            corps.enabled = true;
+            end.enabled = true;
+            nom.text = "Professeur ARTEM";
+            if (done)
+            {
+                corps.text = dialog2[0];
+            }
+
         }
     }
 
@@ -41,5 +63,11 @@ public class ProfesseurARTEM : MonoBehaviour
     void OnTriggerExit2D(Collider2D obj)
     {
         is_OK = false;
+        dialog = false;
+
+        img.enabled = false;
+        nom.enabled = false;
+        corps.enabled = false;
+        end.enabled = false;
     }
 }

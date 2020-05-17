@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PorteCode : MonoBehaviour
 {
@@ -13,12 +14,19 @@ public class PorteCode : MonoBehaviour
     private List<string> dialog1;
     private List<string> dialog2;
 
+    private bool dialog;
+
+    public Image img;
+    public Text nom;
+    public Text corps;
+    public Image end;
+
     void Start()
     {
         dialog1 = new List<string>();
         dialog2 = new List<string>();
-        dialog1.Add("Porte Code : Not completed");
-        dialog2.Add("Porte Code : Completed");
+        dialog1.Add("La porte est fermée avec un digicode.");
+        dialog2.Add("Vous avez ouvert la porte grâce au digicode caché dans la peinture.");
     }
 
     // Update is called once per frame
@@ -26,13 +34,14 @@ public class PorteCode : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && is_OK)
         {
+            dialog = true;
             if (done)
             {
-                Debug.Log(dialog2[0]);
+                //Debug.Log(dialog2[0]);
             }
             else
             {
-                Debug.Log(dialog1[0]);
+                //Debug.Log(dialog1[0]);
             }
         }
 
@@ -44,6 +53,23 @@ public class PorteCode : MonoBehaviour
         {
             done = false;
         }
+
+        if (dialog)
+        {
+            img.enabled = true;
+            nom.enabled = true;
+            corps.enabled = true;
+            end.enabled = true;
+            nom.text = "Porte Code (Description)";
+            if (done)
+            {
+                corps.text = dialog2[0];
+            }
+            else
+            {
+                corps.text = dialog1[0];
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D obj)
@@ -54,5 +80,11 @@ public class PorteCode : MonoBehaviour
     void OnTriggerExit2D(Collider2D obj)
     {
         is_OK = false;
+        dialog = false;
+
+        img.enabled = false;
+        nom.enabled = false;
+        corps.enabled = false;
+        end.enabled = false;
     }
 }
