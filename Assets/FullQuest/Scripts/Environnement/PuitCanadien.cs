@@ -61,7 +61,7 @@ public class PuitCanadien : MonoBehaviour
             nom.enabled = true;
             corps.enabled = true;
             end.enabled = true;
-            nom.text = "Puis Canadien (Description)";
+            nom.text = "Puit Canadien (Description)";
             if (done)
             {
                 corps.text = dialog2[0];

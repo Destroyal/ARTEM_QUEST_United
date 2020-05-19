@@ -14,6 +14,7 @@ public class ProfesseurARTEM : MonoBehaviour
     private List<string> dialog1;
     private List<string> dialog2;
     private bool dialog;
+    public bool do_once;
 
     public Image img;
     public Text nom;
@@ -22,6 +23,7 @@ public class ProfesseurARTEM : MonoBehaviour
 
     void Start()
     {
+        do_once = true;
         dialog1 = new List<string>();
         dialog2 = new List<string>();
         dialog1.Add("Professeur ARTEM : Not completed");
@@ -46,7 +48,7 @@ public class ProfesseurARTEM : MonoBehaviour
             nom.enabled = true;
             corps.enabled = true;
             end.enabled = true;
-            nom.text = "Professeur ARTEM";
+            nom.text = "Professeur ARTEM (Dialogue)";
             if (done)
             {
                 corps.text = dialog2[0];
@@ -69,5 +71,10 @@ public class ProfesseurARTEM : MonoBehaviour
         nom.enabled = false;
         corps.enabled = false;
         end.enabled = false;
+
+        if (do_once) { 
+            scriptA.must_inventory = true;
+            do_once = false;
+        }
     }
 }

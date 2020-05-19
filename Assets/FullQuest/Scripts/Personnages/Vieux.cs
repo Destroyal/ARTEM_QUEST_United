@@ -60,7 +60,7 @@ public class Vieux : MonoBehaviour
             nom.enabled = true;
             corps.enabled = true;
             end.enabled = true;
-            nom.text = "Vieux";
+            nom.text = "Vieux (Dialogue)";
             if (done)
             {
                 corps.text = dialog2[0];

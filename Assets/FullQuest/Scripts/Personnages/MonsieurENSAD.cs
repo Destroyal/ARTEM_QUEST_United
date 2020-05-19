@@ -45,7 +45,7 @@ public class MonsieurENSAD : MonoBehaviour
             nom.enabled = true;
             corps.enabled = true;
             end.enabled = true;
-            nom.text = "Monsieur ENSAD";
+            nom.text = "Monsieur ENSAD (Dialogue)";
             if (done)
             {
                 corps.text = dialog2[0];

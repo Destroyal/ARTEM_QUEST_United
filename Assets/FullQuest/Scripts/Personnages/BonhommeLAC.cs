@@ -61,7 +61,7 @@ public class BonhommeLAC : MonoBehaviour
             nom.enabled = true;
             corps.enabled = true;
             end.enabled = true;
-            nom.text = "Bonhomme LAC";
+            nom.text = "Bonhomme LAC (Dialogue)";
             if (done) {
                 corps.text = dialog2[0];
             }

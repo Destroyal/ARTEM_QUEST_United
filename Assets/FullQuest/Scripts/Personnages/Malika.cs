@@ -61,7 +61,7 @@ public class Malika : MonoBehaviour
             nom.enabled = true;
             corps.enabled = true;
             end.enabled = true;
-            nom.text = "Malika";
+            nom.text = "Malika (Dialogue)";
             if (done)
             {
                 corps.text = dialog2[0];
