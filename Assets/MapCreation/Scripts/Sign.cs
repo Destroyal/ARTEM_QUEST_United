@@ -9,9 +9,8 @@ public class Sign : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
     public string dialog;
+    public GameObject interrogation;
     private bool playerInRange;
-    public Signal contextClueOnSignal;
-    public Signal contextClueOffSignal;
 
 
     // Start is called before the first frame update
@@ -31,6 +30,7 @@ public class Sign : MonoBehaviour
             }
             else
             {
+                interrogation.SetActive(false);
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
@@ -43,8 +43,8 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerMovement>().currentState = PlayerState.interact;
+            interrogation.SetActive(true);
             playerInRange = true;
-            contextClueOnSignal.Raise();
         }
     }
 
@@ -53,9 +53,9 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerMovement>().currentState = PlayerState.walk;
+            interrogation.SetActive(false);
             playerInRange = false;
             dialogBox.SetActive(false);
-            contextClueOffSignal.Raise();
         }
     }
 

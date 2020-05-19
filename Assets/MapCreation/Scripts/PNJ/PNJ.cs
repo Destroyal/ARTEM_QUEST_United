@@ -14,11 +14,14 @@ public class PNJ : MonoBehaviour
     public GameObject Notif;
     public string Name;
     public Dialog dialog;
+    public bool donneur;
     private Animator anim;
     private bool playerInRange;
     private DialogManager dialogManager;
     private PnjState currentState;
     private GameObject player;
+    public DonnerObjet donnerObjet;
+    public InventoryItem item;
 
     private void Start()
     {
@@ -26,6 +29,14 @@ public class PNJ : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         dialogManager = GetComponent<DialogManager>();
+        if(donnerObjet == null)
+        {
+            donneur = false;
+        }
+        else
+        {
+            donnerObjet.objet = item;
+        }
     }
 
     private void Update()
@@ -43,6 +54,11 @@ public class PNJ : MonoBehaviour
             else
             {
                 dialogManager.ContinueDialog();
+                if (dialogManager.DialogEnded && donneur)
+                {
+                    donnerObjet.giveObject();
+                    donneur = false;
+                }
             }
         }
     }

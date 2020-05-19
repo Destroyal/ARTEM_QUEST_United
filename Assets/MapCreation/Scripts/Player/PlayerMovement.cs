@@ -24,10 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     public bool canInteract;
-    public Signal playerHealthSignal;
     public GameObject inventoryCanvas;
 
-    public InputPlayer inputs;
     public GameObject arrowFired;
 
 
@@ -46,10 +44,6 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetButtonDown("Shoot"))
-        {
-            fire();
-        }
         if (Input.GetButtonDown("Attack") && currentState != PlayerState.attack && currentState != PlayerState.interact && currentState != PlayerState.stagger && currentState != PlayerState.speaking)
         {
             StartCoroutine(AttackCo());
@@ -92,30 +86,6 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.MovePosition(
                 transform.position + change * speed * Time.deltaTime
             );
-    }
-
-    public void Knock(float knockTime, float damage)
-    {
-        
-    }
-
-    private IEnumerator KnockCo(float knockTime)
-    {
-        if (playerRigidbody != null)
-        {
-            yield return new WaitForSeconds(knockTime);
-            playerRigidbody.velocity = Vector2.zero;
-            currentState = PlayerState.idle;
-        }
-    }
-
-    public void fire()
-    {
-        Vector3 position = transform.position;
-        position.x += animator.GetFloat("moveX")/2;
-        position.y += animator.GetFloat("moveY")/2;
-        GameObject arrow = Instantiate(arrowFired, position, Quaternion.identity);
-        arrow.GetComponent<ArrowScript>().setChange(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
     }
 
 

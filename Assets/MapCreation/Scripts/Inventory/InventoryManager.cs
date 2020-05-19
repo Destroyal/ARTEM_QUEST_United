@@ -17,6 +17,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText; // Texte ou afficher la description de l'objet
     [SerializeField] private GameObject useButton; // Bouton pour utiliser (ici jeter l'objet)
     [SerializeField] private InventoryItem[] setUp; //Liste des tous les items du jeu pour mettre a jour l'inventaire au Start
+    [SerializeField] private GameObject recevoir;
 
     private InventoryItem ItemToUse;
     private bool inventoryActive;
@@ -86,6 +87,10 @@ public class InventoryManager : MonoBehaviour
             item.numberHeld++;
             playerInventory.inventory.Add(item);
             ReloadInventory();
+        }
+        else
+        {
+            InventoryFullAppear();
         }
     }
 
@@ -159,5 +164,11 @@ public class InventoryManager : MonoBehaviour
     public void InventoryFullDisappear()
     {
         inventoryFull.SetActive(false);
+    }
+
+
+    public void CloseGiveObject()
+    {
+        recevoir.SetActive(false);
     }
 }

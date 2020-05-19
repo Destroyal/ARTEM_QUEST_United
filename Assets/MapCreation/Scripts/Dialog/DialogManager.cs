@@ -10,6 +10,7 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogContainer;
     public TextMeshProUGUI Nom;
     public Text DialogText;
+    public bool DialogEnded;
     private Queue<string> dialogs;
     private float vitesse;
     private bool next;
@@ -25,6 +26,7 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog, string name)
     {
+        DialogEnded = false;
         dialogContainer.SetActive(true);
         Nom.text = name;
         player.GetComponent<PlayerMovement>().currentState = PlayerState.speaking;
@@ -55,6 +57,7 @@ public class DialogManager : MonoBehaviour
         else
         {
             EndDialog();
+            DialogEnded = true;
         }
     }
 
