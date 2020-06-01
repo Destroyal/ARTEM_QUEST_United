@@ -20,6 +20,8 @@ public class PuitCanadien : MonoBehaviour
     public Text nom;
     public Text corps;
     public Image end;
+    public GameObject box;
+    public GameObject box2;
 
     void Start()
     {
@@ -35,6 +37,8 @@ public class PuitCanadien : MonoBehaviour
         if (Input.GetButtonDown("Interact") && is_OK)
         {
             dialog = true;
+            box.SetActive(false);
+            box2.SetActive(true);
             if (done)
             {
                 //Debug.Log(dialog2[0]);
@@ -76,6 +80,7 @@ public class PuitCanadien : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj)
     {
         is_OK = true;
+        box.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D obj)
@@ -87,5 +92,7 @@ public class PuitCanadien : MonoBehaviour
         nom.enabled = false;
         corps.enabled = false;
         end.enabled = false;
+        box.SetActive(false);
+        box2.SetActive(false);
     }
 }

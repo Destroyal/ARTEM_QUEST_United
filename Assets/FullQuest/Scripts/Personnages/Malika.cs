@@ -20,6 +20,9 @@ public class Malika : MonoBehaviour
     public Text corps;
     public Image end;
 
+    public GameObject box;
+    public GameObject box2;
+
 
     void Start()
     {
@@ -35,6 +38,8 @@ public class Malika : MonoBehaviour
         if (Input.GetButtonDown("Interact") && is_OK)
         {
             dialog = true;
+            box.SetActive(false);
+            box2.SetActive(true);
             if (done)
             {
                 //Debug.Log(dialog2[0]);
@@ -45,7 +50,7 @@ public class Malika : MonoBehaviour
             }
         }
 
-        if (scriptA.carte_izly && scriptA.cle)
+        if (scriptA.carte_izly)
         {
             done = true;
         }
@@ -76,6 +81,7 @@ public class Malika : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj)
     {
         is_OK = true;
+        box.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D obj)
@@ -87,5 +93,8 @@ public class Malika : MonoBehaviour
         nom.enabled = false;
         corps.enabled = false;
         end.enabled = false;
+
+        box.SetActive(false);
+        box2.SetActive(false);
     }
 }

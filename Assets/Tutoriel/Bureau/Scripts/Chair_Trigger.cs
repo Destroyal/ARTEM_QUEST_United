@@ -43,6 +43,7 @@ public class Chair_Trigger : MonoBehaviour
     public Text text5;
 
     private bool mlock;
+    private bool do_once;
     
     // Start is called before the first frame update
     void Start()
@@ -192,6 +193,7 @@ public class Chair_Trigger : MonoBehaviour
                 this.enabled = false;
                 notice.SetActive(false);
                 end.SetActive(false);
+                do_once = true;
 
             }
 
@@ -209,12 +211,15 @@ public class Chair_Trigger : MonoBehaviour
     {
         if (goal.must_interact || goal.has_interacted)
         {
-            if (Input.GetButtonDown("Interact")) 
+            if (Input.GetButtonDown("Interact"))
             {
-                goal.must_click = true;
-                movement.is_stunned = true;
-                goal.is_interacting = true;
-                goal.has_interacted = true;
+                if (!do_once)
+                {
+                    goal.must_click = true;
+                    movement.is_stunned = true;
+                    goal.is_interacting = true;
+                    goal.has_interacted = true;
+                }
             }
         }
     }

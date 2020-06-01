@@ -20,6 +20,8 @@ public class Corde : MonoBehaviour
     public Text nom;
     public Text corps;
     public Image end;
+    public GameObject box;
+    public GameObject box2;
 
     void Start()
     {
@@ -38,6 +40,8 @@ public class Corde : MonoBehaviour
             //Debug.Log(dialog2[0]);
             done = true;
             scriptA.corde = true;
+            box.SetActive(false);
+            box2.SetActive(true);
         }
 
         if (dialog)
@@ -58,6 +62,7 @@ public class Corde : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj)
     {
         is_OK = true;
+        box.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D obj)
@@ -69,5 +74,7 @@ public class Corde : MonoBehaviour
         nom.enabled = false;
         corps.enabled = false;
         end.enabled = false;
+        box.SetActive(false);
+        box2.SetActive(false);
     }
 }

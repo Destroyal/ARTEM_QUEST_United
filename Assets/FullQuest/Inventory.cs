@@ -11,12 +11,15 @@ public class Inventory : MonoBehaviour
     private bool do_once;
     private bool do_once2;
 
-    public Image carte_etu;
-    public Image corde;
-    public Image code;
-    public Image tuba;
-    public Image carte_izly;
-    public Image cle;
+    public GameObject carte_etu;
+    public GameObject corde;
+    public GameObject code;
+    public GameObject tuba;
+    public GameObject carte_izly;
+    public GameObject cle;
+
+    public Text titre;
+    public Text desc;
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +49,18 @@ public class Inventory : MonoBehaviour
                 script.is_inventory = false;
             }
 
-            carte_etu.enabled = script.carte_etu;
-            corde.enabled = script.corde;
-            code.enabled = script.code;
-            tuba.enabled = script.tuba;
-            carte_izly.enabled = script.carte_izly;
-            cle.enabled = script.cle;
+            carte_etu.SetActive(script.carte_etu);
+            corde.SetActive(script.corde);
+            code.SetActive(script.code);
+            tuba.SetActive(script.tuba);
+            carte_izly.SetActive(script.carte_izly);
+            cle.SetActive(script.cle);
+
+            if (!A_switch)
+            {
+                titre.text = "";
+                desc.text = "";
+            }
 
         }
 

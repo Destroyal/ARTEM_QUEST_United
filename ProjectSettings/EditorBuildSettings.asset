@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MiniJeu_Descente/Scenes/Option.unity
     guid: 6e9f60592cb25594398197ab07871dec
+  - enabled: 1
+    path: Assets/FullQuest/FullARTEM.unity
+    guid: cf85f1f16be33cb4193f0548fe06d05e
   m_configObjects: {}

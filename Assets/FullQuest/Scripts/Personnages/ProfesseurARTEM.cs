@@ -21,6 +21,9 @@ public class ProfesseurARTEM : MonoBehaviour
     public Text corps;
     public Image end;
 
+    public GameObject box;
+    public GameObject box2;
+
     void Start()
     {
         do_once = true;
@@ -39,7 +42,9 @@ public class ProfesseurARTEM : MonoBehaviour
             //Debug.Log(dialog2[0]);
             done = true;
             scriptA.carte_etu = true;
-              
+            box.SetActive(false);
+            box2.SetActive(true);
+
         }
 
         if (dialog)
@@ -52,6 +57,11 @@ public class ProfesseurARTEM : MonoBehaviour
             if (done)
             {
                 corps.text = dialog2[0];
+                if (do_once)
+                {
+                    scriptA.must_inventory = true;
+                    do_once = false;
+                }
             }
 
         }
@@ -60,6 +70,7 @@ public class ProfesseurARTEM : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj)
     {
         is_OK = true;
+        box.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D obj)
@@ -72,9 +83,7 @@ public class ProfesseurARTEM : MonoBehaviour
         corps.enabled = false;
         end.enabled = false;
 
-        if (do_once) { 
-            scriptA.must_inventory = true;
-            do_once = false;
-        }
+        box.SetActive(false);
+        box2.SetActive(false);
     }
 }

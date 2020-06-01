@@ -20,6 +20,9 @@ public class Vieux : MonoBehaviour
     public Text corps;
     public Image end;
 
+    public GameObject box;
+    public GameObject box2;
+
     void Start()
     {
         dialog1 = new List<string>();
@@ -38,6 +41,8 @@ public class Vieux : MonoBehaviour
             {
                 //Debug.Log(dialog2[0]);
                 scriptA.tuba = true;
+                box.SetActive(false);
+                box2.SetActive(true);
             }
             else
             {
@@ -75,6 +80,7 @@ public class Vieux : MonoBehaviour
     void OnTriggerEnter2D(Collider2D obj)
     {
         is_OK = true;
+        box.SetActive(true);
     }
 
     void OnTriggerExit2D(Collider2D obj)
@@ -86,5 +92,8 @@ public class Vieux : MonoBehaviour
         nom.enabled = false;
         corps.enabled = false;
         end.enabled = false;
+
+        box.SetActive(false);
+        box2.SetActive(false);
     }
 }

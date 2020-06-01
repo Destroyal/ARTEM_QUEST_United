@@ -7,7 +7,7 @@ public class map : MonoBehaviour
     public float espacement;
     public int seuil;
     public int obstaclesDepart;
-    public static float vitesse= 8 ;
+    public static float vitesse= 7 ;
     public GameObject objObstacle;
     public GameObject objSol;
     public Game manager;
@@ -23,14 +23,14 @@ public class map : MonoBehaviour
 
         for (int i = 0; i < obstaclesDepart; i++)
         {
-            GameObject tmp = (GameObject)Instantiate(objObstacle, new Vector2((float)i * espacement + 15f, (float)Random.Range(5, 9)), Quaternion.identity);
+            GameObject tmp = (GameObject)Instantiate(objObstacle, new Vector2((float)i * espacement + 50f, (float)Random.Range(7, 10)), Quaternion.identity);
             tmp.transform.parent = this.transform;
             obstacles.Add(tmp);
         }
 
         for (int i = 1; i < 15; i++)
         {
-            GameObject tmp = (GameObject)Instantiate(objSol, new Vector2((float)i * 27f-40f, -7f), Quaternion.identity);
+            GameObject tmp = (GameObject)Instantiate(objSol, new Vector2((float)i * 19f-40f, -8.5f), Quaternion.identity);
             tmp.transform.parent = this.transform;
             ground.Add(tmp);
         }
@@ -53,14 +53,14 @@ public class map : MonoBehaviour
 
     void GenererObj()
     {
-        GameObject tmp = (GameObject)Instantiate(objObstacle, new Vector2(obstacles[obstacles.Count - 1].transform.position.x + espacement, (float)Random.Range(10, 12)), Quaternion.identity);
+        GameObject tmp = (GameObject)Instantiate(objObstacle, new Vector2(obstacles[obstacles.Count - 1].transform.position.x + espacement, (float)Random.Range(5, 9)), Quaternion.identity);
         tmp.transform.parent = this.transform;
         obstacles.Add(tmp);
     }
 
     void GenererSol()
     {
-        GameObject tmp = (GameObject)Instantiate(objSol, new Vector2(ground[ground.Count - 1].transform.position.x + 27f, -5f), Quaternion.identity);
+        GameObject tmp = (GameObject)Instantiate(objSol, new Vector2(ground[ground.Count - 1].transform.position.x + 19f, -8.5f), Quaternion.identity);
         tmp.transform.parent = this.transform;
         ground.Add(tmp);
     }

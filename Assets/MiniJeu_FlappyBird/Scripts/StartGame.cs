@@ -18,7 +18,7 @@ public class StartGame : MonoBehaviour
     	if(showmsg)
     	{
     		GUI.skin = skin;
- 	   		GUI.TextField(new Rect(Screen.width/2-70,Screen.height/2-15,140,30), "Cliquer pour jouer");
+ 	   		GUI.Button(new Rect(Screen.width/2-70,Screen.height/2-15,140,30), "Cliquer pour jouer");
     		if(Input.anyKeyDown)
     		{
     			Time.timeScale = 1.0f;

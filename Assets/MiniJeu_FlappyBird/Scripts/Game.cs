@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    public static int score = 0;
+    public static int score;
     private int bestscore;
     public static bool perdu = false;
     public float vitessemap;
@@ -21,7 +21,7 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        score=Perso.score;
         if (perdu && score > bestscore)
         {
             bestscore = score;
@@ -31,18 +31,23 @@ public class Game : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(Screen.width / 2 - 100, 15f, 200, 180), score.ToString());
         GUI.skin = skingo;
+
+        if (perdu == false) {
+
+            GUI.Label(new Rect(Screen.width / 2 - 50, 30, 100, 100), score.ToString());
+        }
+        
         
 
         if (perdu)
         {
             {
                 map.vitesse = 0;
-                GUI.TextField(new Rect(Screen.width / 2 - 60, Screen.height / 2 - 50, 120, 50), "GAME OVER");
+                GUI.TextField(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 100, 240, 100), "Your score : " + score.ToString() +"\n Best score : " + bestscore.ToString());
 
 
-                if (GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2+50, 100, 30), "Rejouer ?")) // means "si je clique sur le button"
+                if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2+80, 140, 50), "Rejouer ?")) // means "si je clique sur le button"
                 {
                     map.vitesse = vitessemap;
                     Application.LoadLevel("Game");
@@ -51,7 +56,7 @@ public class Game : MonoBehaviour
 
                 }
 
-                if (GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height / 2+20, 100, 30), "Quitter")) // means "si je clique sur le button"
+                if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2+20, 140, 50), "Quitter")) // means "si je clique sur le button"
                 {
                     Application.Quit();
                     perdu = false;

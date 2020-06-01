@@ -7,7 +7,12 @@ public class Perso : MonoBehaviour
 
 	public float force; // force du saut
 	private bool mort = false; // Notre personnage est-il en vie
+	public static int score;
 
+	void Start()
+	{
+		score = 0;
+	}
 	// Update is called once per frame
 	void Update()
 	{
@@ -35,7 +40,7 @@ public class Perso : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-			Game.score++;
+			score++;
 	}
     
 

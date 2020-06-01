@@ -38,15 +38,7 @@ public class Counselor_Trigger : MonoBehaviour
             end.SetActive(true);
             image.enabled = true;
 
-            if (Input.GetButtonDown("Pass_Dialog"))
-            {
-                nom.SetActive(false);
-                corps.SetActive(false);
-                end.SetActive(false);
-                image.enabled = false;
-                goal.is_interacting = false;
-                movement.is_stunned = false;
-            }
+           
         }
     }
 
@@ -56,7 +48,7 @@ public class Counselor_Trigger : MonoBehaviour
         {
             if (Input.GetButtonDown("Interact")) 
             { 
-                movement.is_stunned = true;
+                //movement.is_stunned = true;
                 goal.is_interacting = true;
                 goal.has_interacted = true;
             }
@@ -71,5 +63,11 @@ public class Counselor_Trigger : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider)
     {
         is_OK = false;
+        nom.SetActive(false);
+        corps.SetActive(false);
+        end.SetActive(false);
+        image.enabled = false;
+        goal.is_interacting = false;
+        movement.is_stunned = false;
     }
 }
