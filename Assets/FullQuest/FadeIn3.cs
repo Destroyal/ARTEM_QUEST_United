@@ -11,11 +11,21 @@ public class FadeIn3 : MonoBehaviour
     public GameObject Fade;
     public Text text;
     public AudioSource bg;
+    private SurvivorScript surv_script;
 
     void Start()
     {
+        surv_script = GameObject.Find("Survivor").GetComponent<SurvivorScript>();
+        if (!surv_script.once) { 
         // fades the image out when you click
         StartCoroutine(FadeImage(true));
+        surv_script.once = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
     IEnumerator FadeImage(bool fadeAway)

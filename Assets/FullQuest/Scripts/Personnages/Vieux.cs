@@ -36,13 +36,12 @@ public class Vieux : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && is_OK)
         {
+            box.SetActive(false);
+            box2.SetActive(true);
             dialog = true;
             if (done)
             {
-                //Debug.Log(dialog2[0]);
                 scriptA.tuba = true;
-                box.SetActive(false);
-                box2.SetActive(true);
             }
             else
             {

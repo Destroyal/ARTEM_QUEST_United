@@ -26,10 +26,16 @@ public class Malika : MonoBehaviour
 
     void Start()
     {
-        dialog1 = new List<string>();
-        dialog2 = new List<string>();
-        dialog1.Add("Vous ne passerez pas ! Du moins, pas sans votre carte IZLY.");
-        dialog2.Add("Allez-y.");
+        if (!scriptA.carte_izly) { 
+            dialog1 = new List<string>();
+            dialog2 = new List<string>();
+            dialog1.Add("Vous ne passerez pas ! Du moins, pas sans votre carte IZLY.");
+            dialog2.Add("Allez-y.");
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame

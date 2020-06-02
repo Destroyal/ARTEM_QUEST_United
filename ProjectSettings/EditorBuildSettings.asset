@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FullQuest/FullARTEM.unity
     guid: cf85f1f16be33cb4193f0548fe06d05e
+  - enabled: 1
+    path: Assets/FullQuest/Crous.unity
+    guid: 7840eb20d95d9bc4aa6bbe4aaa1260b0
   m_configObjects: {}

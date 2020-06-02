@@ -49,8 +49,8 @@ public class CloudSpawn : MonoBehaviour
         var worldSize2 = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         //Debug.Log(worldSize2);
         //Debug.Log(worldSize);
-        minX = worldSize2.x + 0.5f;
-        maxX = worldSize.x - 0.5f;
+        minX = worldSize2.x + 1f;
+        maxX = worldSize.x - 1f;
 
         lastCloudY = 0;//initial position of cloud
         for (var i = 0; i < clouds.Count; i++)

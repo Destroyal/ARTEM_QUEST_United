@@ -44,10 +44,13 @@ public class Chair_Trigger : MonoBehaviour
 
     private bool mlock;
     private bool do_once;
+
+    private SurvivorScript surv_script;
     
     // Start is called before the first frame update
     void Start()
     {
+        surv_script = GameObject.Find("Survivor").GetComponent<SurvivorScript>();
         is_talking = false;
         list = new List<string>();
         string s0 = "Chaise (Description)";
@@ -110,6 +113,7 @@ public class Chair_Trigger : MonoBehaviour
                 goal.must_input = true;
                 inputField.SetActive(true);
                 nomP = inpF.text;
+                surv_script.nom = nomP;
                 list2[counter+1] = "Monsieur "+nomP+" ... Mmmm ...  Intéressant. Vous n'êtes pas le premier "+nomP+" que je vois passer dans ce bureau.";
                 if (Input.GetButtonDown("Submit") && nomP != "")
                 {
@@ -152,6 +156,7 @@ public class Chair_Trigger : MonoBehaviour
                 inge.SetActive(false);
                 mana.SetActive(false);
                 goal.has_important = true;
+                surv_script.formation = classe;
                 list2[8] = "Je peux déjà percevoir la catégorie faits divers dans 5 ans: Monsieur "+nomP+", " + classe + " raté, s'est jeté sur la voie. Voyez vous, on ne perd rien à être réaliste.";
             }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class Game : MonoBehaviour
     void Update()
     {
         score=Perso.score;
+        if (score > 10)
+        {
+            SceneManager.LoadScene("FullARTEM");
+        }
         if (perdu && score > bestscore)
         {
             bestscore = score;

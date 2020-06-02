@@ -10,8 +10,8 @@ public class PlayerBounds : MonoBehaviour
     {
         var worldSize = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         var worldSize2 = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        minX = worldSize2.x + 0.5f;
-        maxX = worldSize.x - 0.5f;
+        minX = worldSize2.x - 0.5f;
+        maxX = worldSize.x + 0.5f;
     }
     // Update is called once per frame
     void Update()

@@ -11,11 +11,13 @@ public class PlayerScore : MonoBehaviour
     // Start is called before the first frame update
     public AudioClip CoinSound;
     public AudioClip LifeSound;
+
     void Start()
     {
-
+        //CoinCount = 0;
+        //LifeCount = 1;
+        //score = 0;
     }
-
     // Update is called once per frame
     void Update()
     {

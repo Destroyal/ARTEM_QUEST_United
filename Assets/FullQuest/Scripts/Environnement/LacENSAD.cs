@@ -22,6 +22,9 @@ public class LacENSAD : MonoBehaviour
     public Image end;
     public GameObject box;
     public GameObject box2;
+    public SwitchScenes switchS;
+
+    private SurvivorScript surv_script;
 
     void Start()
     {
@@ -29,6 +32,7 @@ public class LacENSAD : MonoBehaviour
         dialog2 = new List<string>();
         dialog1.Add("Le lac est très profond, il est dangereux d'y aller sans protection.");
         dialog2.Add("Vous avez retrouvé un jouet dans le lac.");
+        surv_script = GameObject.Find("Survivor").GetComponent<SurvivorScript>();
     }
 
     // Update is called once per frame
@@ -61,6 +65,7 @@ public class LacENSAD : MonoBehaviour
 
         if (dialog)
         {
+            switchS.MiniGame();
             img.enabled = true;
             nom.enabled = true;
             corps.enabled = true;
@@ -69,6 +74,11 @@ public class LacENSAD : MonoBehaviour
             if (done)
             {
                 corps.text = dialog2[0];
+                if (!surv_script.once2) { 
+                    switchS.MiniGame();
+                    surv_script.once2 = true;
+                }
+
             }
             else
             {

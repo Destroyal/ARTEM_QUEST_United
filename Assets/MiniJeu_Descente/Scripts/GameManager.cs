@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     //public bool gameStart;
     void Start()
     {
+
         if (Instance != null)
         {
             Object.Destroy(gameObject);

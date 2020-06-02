@@ -33,35 +33,38 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetButtonDown("Inventory"))
         {
-            A_switch = !A_switch;
-            inventory.SetActive(A_switch);
-            if (A_switch && do_once)
+            if (script.must_inventory || script.is_inventory || script.has_inventory)
             {
-                do_once = false;
-                script.must_inventory = false;
-                script.is_inventory = true;
+                A_switch = !A_switch;
+                inventory.SetActive(A_switch);
+                if (A_switch && do_once)
+                {
+                    do_once = false;
+                    script.must_inventory = false;
+                    script.is_inventory = true;
+                }
+
+                if (!A_switch && do_once2)
+                {
+                    do_once2 = false;
+                    script.has_inventory = true;
+                    script.is_inventory = false;
+                }
+
+                carte_etu.SetActive(script.carte_etu);
+                corde.SetActive(script.corde);
+                code.SetActive(script.code);
+                tuba.SetActive(script.tuba);
+                carte_izly.SetActive(script.carte_izly);
+                cle.SetActive(script.cle);
+
+                if (!A_switch)
+                {
+                    titre.text = "";
+                    desc.text = "";
+                }
+
             }
-
-            if (!A_switch && do_once2)
-            {
-                do_once2 = false;
-                script.has_inventory = true;
-                script.is_inventory = false;
-            }
-
-            carte_etu.SetActive(script.carte_etu);
-            corde.SetActive(script.corde);
-            code.SetActive(script.code);
-            tuba.SetActive(script.tuba);
-            carte_izly.SetActive(script.carte_izly);
-            cle.SetActive(script.cle);
-
-            if (!A_switch)
-            {
-                titre.text = "";
-                desc.text = "";
-            }
-
         }
 
     }
