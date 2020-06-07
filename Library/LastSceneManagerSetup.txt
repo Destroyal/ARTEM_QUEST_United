@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MiniJeu_Descente/Scenes/GamePlay.unity
+- path: Assets/FullQuest/FullARTEM.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

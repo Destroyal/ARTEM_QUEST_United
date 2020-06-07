@@ -7,6 +7,7 @@ public class SurvivorScript : MonoBehaviour
 
     public bool once;
     public bool once2;
+    public bool once3;
     //Prévoir un délai de fermeture
     public bool must_inventory;
     public bool is_inventory;

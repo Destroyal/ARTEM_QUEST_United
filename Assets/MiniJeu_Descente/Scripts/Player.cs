@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float MaxSpeed = 4;
     public float Force = 4;
+    public bool blockleft;
+    public bool blockright;
 
     public Rigidbody2D mybody;
     public Animator myAnimator;
@@ -28,13 +30,13 @@ public class Player : MonoBehaviour
         var xforce = 0.0f;
 
         //Debug.Log(x);
-        if (x > 0)
+        if (x > 0 && !blockright)
         {
             xforce = Force * x;
             myAnimator.SetBool("walk", true);
             this.gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (x < 0)
+        else if (x < 0 && !blockleft)
         {
             xforce = Force * x;
             myAnimator.SetBool("walk", true);

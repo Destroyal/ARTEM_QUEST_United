@@ -16,21 +16,20 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bestscore = PlayerPrefs.GetInt("meilleur score");   
+        bestscore = 20;
     }
 
     // Update is called once per frame
     void Update()
     {
         score=Perso.score;
-        if (score > 10)
+        if (score > 20)
         {
             SceneManager.LoadScene("FullARTEM");
         }
         if (perdu && score > bestscore)
         {
             bestscore = score;
-            PlayerPrefs.SetInt("meilleur score", score);
         }
     }
 
@@ -49,7 +48,7 @@ public class Game : MonoBehaviour
         {
             {
                 map.vitesse = 0;
-                GUI.TextField(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 100, 240, 100), "Your score : " + score.ToString() +"\n Best score : " + bestscore.ToString());
+                GUI.TextField(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 100, 240, 100), "Votre score : " + score.ToString() +"\n Score à atteindre : " + bestscore.ToString());
 
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2+80, 140, 50), "Rejouer ?")) // means "si je clique sur le button"

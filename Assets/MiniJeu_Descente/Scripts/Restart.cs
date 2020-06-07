@@ -19,6 +19,9 @@ public class Restart : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        SceneManager.LoadScene("GamePlay");
+        if(col.name == "Player_0")
+        { 
+            SceneManager.LoadScene("GamePlay");
+        }
     }
 }

@@ -22,6 +22,8 @@ public class PuitCanadien : MonoBehaviour
     public Image end;
     public GameObject box;
     public GameObject box2;
+    public SwitchScenes switchS;
+    private SurvivorScript surv_script;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class PuitCanadien : MonoBehaviour
         dialog2 = new List<string>();
         dialog1.Add("Sauter dans le puit sans corde vous tuera sur le coup.");
         dialog2.Add("Vous avez récupéré la clé claquée en descendant au fond du puit.");
+        surv_script = GameObject.Find("Survivor").GetComponent<SurvivorScript>();
     }
 
     // Update is called once per frame
@@ -69,6 +72,11 @@ public class PuitCanadien : MonoBehaviour
             if (done)
             {
                 corps.text = dialog2[0];
+                if (!surv_script.once3)
+                {
+                    switchS.MiniGame2();
+                    surv_script.once3 = true;
+                }
             }
             else
             {

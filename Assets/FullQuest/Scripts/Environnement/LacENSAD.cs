@@ -65,7 +65,6 @@ public class LacENSAD : MonoBehaviour
 
         if (dialog)
         {
-            switchS.MiniGame();
             img.enabled = true;
             nom.enabled = true;
             corps.enabled = true;

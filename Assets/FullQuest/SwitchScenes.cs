@@ -111,4 +111,24 @@ public class SwitchScenes : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void MiniGame2()
+    {
+
+        surv_script.next = new Vector3(42.42f, 15.36f, -0.81f);
+
+        surv_script.must_inventory = quest.must_inventory;
+        surv_script.is_inventory = quest.is_inventory;
+        surv_script.has_inventory = quest.has_inventory;
+
+        surv_script.carte_etu = quest.carte_etu;
+        surv_script.carte_izly = quest.carte_izly;
+        surv_script.corde = quest.corde;
+        surv_script.tuba = quest.tuba;
+        surv_script.jouet = quest.jouet;
+        surv_script.code = quest.code;
+        surv_script.cle = quest.cle;
+
+        SceneManager.LoadScene("GamePlay");
+    }
+
 }
