@@ -23,6 +23,8 @@ public class PorteCode : MonoBehaviour
     public GameObject box;
     public GameObject box2;
 
+    private bool open;
+
     void Start()
     {
         dialog1 = new List<string>();
@@ -39,8 +41,11 @@ public class PorteCode : MonoBehaviour
             dialog = true;
             box.SetActive(false);
             box2.SetActive(true);
-            if (done)
+            if (done && !open)
             {
+                this.GetComponent<BoxCollider2D>().enabled = false;
+                this.GetComponent<SpriteRenderer>().enabled = false;
+                open = true;
                 //Debug.Log(dialog2[0]);
             }
             else

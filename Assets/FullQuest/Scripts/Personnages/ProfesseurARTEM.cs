@@ -30,7 +30,7 @@ public class ProfesseurARTEM : MonoBehaviour
         dialog1 = new List<string>();
         dialog2 = new List<string>();
         dialog1.Add("Professeur ARTEM : Not completed");
-        dialog2.Add("Bonjour. Profitez bien de votre carte d'étudiant ARTEM !");
+        dialog2.Add("Bonjour. Profitez bien de votre carte d'étudiant ARTEM ! Un trésor est caché sur ce campus ...");
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public class Inventory : MonoBehaviour
     public GameObject tuba;
     public GameObject carte_izly;
     public GameObject cle;
+    public GameObject jouet;
 
     public Text titre;
     public Text desc;
@@ -57,6 +58,7 @@ public class Inventory : MonoBehaviour
                 tuba.SetActive(script.tuba);
                 carte_izly.SetActive(script.carte_izly);
                 cle.SetActive(script.cle);
+                jouet.SetActive(script.jouet);
 
                 if (!A_switch)
                 {

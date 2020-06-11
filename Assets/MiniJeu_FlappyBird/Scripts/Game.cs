@@ -16,14 +16,14 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bestscore = 20;
+        bestscore = 30;
     }
 
     // Update is called once per frame
     void Update()
     {
         score=Perso.score;
-        if (score > 20)
+        if (score >= 20)
         {
             SceneManager.LoadScene("FullARTEM");
         }

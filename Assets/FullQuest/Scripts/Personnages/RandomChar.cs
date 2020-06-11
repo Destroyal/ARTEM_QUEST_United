@@ -32,7 +32,6 @@ public class RandomChar : MonoBehaviour
         if (Input.GetButtonDown("Interact") && is_OK)
         {
             dialog = true;
-            scriptA.tuba = true;
             box.SetActive(false);
             box2.SetActive(true);
         }

@@ -24,7 +24,7 @@ public class FadeOut2 : MonoBehaviour
         if (fadeAway)
         {
             
-            for (float i = 0; i <= 1; i += (float)0.2 * Time.deltaTime)
+            for (float i = 0; i <= 1; i += (float)0.4 * Time.deltaTime)
             {
                 // set color with i as alpha
                 if (i <= 1)

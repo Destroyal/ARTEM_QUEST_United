@@ -1455,6 +1455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fe26979040c4247a18dcc5bc6fd116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  once: 0
+  once2: 0
+  once3: 0
   must_inventory: 0
   is_inventory: 0
   has_inventory: 0
@@ -1465,7 +1468,7 @@ MonoBehaviour:
   jouet: 0
   code: 0
   cle: 0
-  next: {fileID: 3318077353571893401, guid: 149812426c586cb49b2bd98418b6bc76, type: 3}
+  next: {x: 42.42, y: 15.36, z: -0.81}
   nom: 
   formation: 
 --- !u!4 &576748012

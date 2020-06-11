@@ -22,6 +22,7 @@ public class Malika : MonoBehaviour
 
     public GameObject box;
     public GameObject box2;
+    public GameObject malika2;
 
 
     void Start()
@@ -34,7 +35,6 @@ public class Malika : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
         }
     }
 
@@ -48,6 +48,8 @@ public class Malika : MonoBehaviour
             box2.SetActive(true);
             if (done)
             {
+                Destroy(this.gameObject);
+                malika2.SetActive(true);
                 //Debug.Log(dialog2[0]);
             }
             else

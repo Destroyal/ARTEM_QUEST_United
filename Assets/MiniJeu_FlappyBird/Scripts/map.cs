@@ -23,7 +23,7 @@ public class map : MonoBehaviour
 
         for (int i = 0; i < obstaclesDepart; i++)
         {
-            GameObject tmp = (GameObject)Instantiate(objObstacle, new Vector2((float)i * espacement + 50f, (float)Random.Range(7, 10)), Quaternion.identity);
+            GameObject tmp = (GameObject)Instantiate(objObstacle, new Vector2((float)i * espacement + 50f, (float)Random.Range(5f, 10f)), Quaternion.identity);
             tmp.transform.parent = this.transform;
             obstacles.Add(tmp);
         }

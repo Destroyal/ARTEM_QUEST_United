@@ -11,14 +11,14 @@ public class UpdateInventory : MonoBehaviour
     public void OnClick_CarteIzly()
     {
         nom.text = "Carte Izly";
-        desc.text = "Carte Izly";
+        desc.text = "La condition sine qua non pour avoir une chance de déjeuner au CROUS.";
     }
 
     public void OnClick_CarteEtu()
     {
         SurvivorScript surv_script = GameObject.Find("Survivor").GetComponent<SurvivorScript>();
         nom.text = "Carte Étudiante";
-        desc.text = "Nom : " + surv_script.nom + " ; Étudiant " + surv_script.formation;
+        desc.text = "Le nom de l'étudiant figurant sur la carte est " + surv_script.nom + ". Il s'agit d'un étudiant " + surv_script.formation;
         if (surv_script.formation == "Ingénieur")
         {
             desc.text = desc.text + " à l'École des Mines.";
@@ -36,27 +36,34 @@ public class UpdateInventory : MonoBehaviour
 
     public void OnClick_Code()
     {
-        nom.text = "Code Secret";
-        desc.text = "Code Secret";
+        nom.text = "Peinture mystérieuse";
+        desc.text = "Il est écrit derrière la peinture que celle-ci a été réalisée par Kristoffer Zetterstand en 2010.";
     }
 
     public void OnClick_Corde()
     {
         nom.text = "Corde";
-        desc.text = "Corde";
+        desc.text = "Un morceau de corde long et résistant pouvant être utilisé pour accéder à des zones impraticables.";
     }
 
 
     public void OnClick_Tuba()
     {
-        nom.text = "Tuba";
-        desc.text = "Tuba";
+        nom.text = "Masque et Tuba";
+        desc.text = "Un vieil équippement qui semble dater de l'avant guerre. Cependant, celui-ci semble toujours en état.";
+    }
+
+
+    public void OnClick_Jouet()
+    {
+        nom.text = "Jouet";
+        desc.text = "Une petite voiture qui a dû moisir pendant un certain temps dans le lac.";
     }
 
     public void OnClick_Clé()
     {
-        nom.text = "Clé";
-        desc.text = "Clé";
+        nom.text = "Clé claquée";
+        desc.text = "Une très grosse clé que quelqu'un a dû, un jour, égarer à 200m de profondeur.";
     }
 
 }
