@@ -29,7 +29,7 @@ public class PorteCode : MonoBehaviour
     {
         dialog1 = new List<string>();
         dialog2 = new List<string>();
-        dialog1.Add("La porte est fermée avec un digicode.");
+        dialog1.Add("La porte est fermée avec un digicode à 4 chiffres.");
         dialog2.Add("Vous avez ouvert la porte grâce au digicode 2010 caché dans la date de la peinture.");
     }
 

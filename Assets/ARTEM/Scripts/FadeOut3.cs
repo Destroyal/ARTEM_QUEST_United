@@ -39,7 +39,7 @@ public class FadeOut3 : MonoBehaviour
                 // set color with i as alpha
 
                 img2.color = new Color(1, 1, 1, i/4);
-                audio.volume = audio.volume - i / 20000;
+                audio.volume = audio.volume - i / 14000;
                 yield return null;
 
 

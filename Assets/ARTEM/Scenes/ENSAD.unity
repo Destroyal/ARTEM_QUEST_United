@@ -3779,7 +3779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1004712647}
-  speed: 0.03
+  speed: 0.08
   is_stunned: 0
 --- !u!1 &1097623901
 GameObject:
