@@ -16,7 +16,7 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bestscore = 30;
+        bestscore = 20;
     }
 
     // Update is called once per frame
@@ -48,10 +48,10 @@ public class Game : MonoBehaviour
         {
             {
                 map.vitesse = 0;
-                GUI.TextField(new Rect(Screen.width / 2 - 120, Screen.height / 2 - 100, 240, 100), "Votre score : " + score.ToString() +"\n Score à atteindre : " + bestscore.ToString());
+                GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 100), "Votre score : " + score.ToString() +"\n Score à atteindre : " + bestscore.ToString());
 
 
-                if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2+80, 140, 50), "Rejouer ?")) // means "si je clique sur le button"
+                if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2 +20, 140, 50), "Rejouer ?")) // means "si je clique sur le button"
                 {
                     map.vitesse = vitessemap;
                     Application.LoadLevel("Game");
@@ -60,12 +60,6 @@ public class Game : MonoBehaviour
 
                 }
 
-                if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2+20, 140, 50), "Quitter")) // means "si je clique sur le button"
-                {
-                    Application.Quit();
-                    perdu = false;
-                    Game.score = 0;
-                }
             }
         }
     }

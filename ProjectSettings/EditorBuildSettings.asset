@@ -6,33 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MapCreation/Scenes/Main Scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Tutoriel/Menu Principal/Scenes/MenuPrincipal.unity
+    path: Assets/Menu Principal/Scenes/MenuPrincipal.unity
     guid: 0543e2d50cd3a1d479ec2599be6305e8
   - enabled: 1
-    path: Assets/Tutoriel/Bureau/Scenes/Bureau2.unity
+    path: Assets/Bureau - Tutoriel/Scenes/Bureau2.unity
     guid: 16a572da814e0d349b91bed3b2d7a532
+  - enabled: 1
+    path: Assets/ARTEM/Scenes/FullARTEM.unity
+    guid: cf85f1f16be33cb4193f0548fe06d05e
+  - enabled: 1
+    path: Assets/ARTEM/Scenes/Crous.unity
+    guid: 7840eb20d95d9bc4aa6bbe4aaa1260b0
+  - enabled: 1
+    path: Assets/ARTEM/Scenes/ENSAD.unity
+    guid: 28fbffe6245bbe744b5a2f489b3f82e5
   - enabled: 1
     path: Assets/MiniJeu_FlappyBird/Scenes/Game.unity
     guid: dbd85790c11046348b9fb662f8aa62e7
   - enabled: 1
-    path: Assets/MiniJeu_Descente/Scenes/MainMenu.unity
-    guid: 7ce9603dd0a1e6148a0f65c840322d9a
-  - enabled: 1
-    path: Assets/MiniJeu_Descente/Scenes/HighScore.unity
-    guid: c19fe9a3ba883c14497b5cb506ed4492
-  - enabled: 1
     path: Assets/MiniJeu_Descente/Scenes/GamePlay.unity
     guid: 18fa276377975de489e7082e9cd31865
-  - enabled: 1
+  - enabled: 0
+    path: Assets/MiniJeu_Descente/Scenes/MainMenu.unity
+    guid: 7ce9603dd0a1e6148a0f65c840322d9a
+  - enabled: 0
+    path: Assets/MiniJeu_Descente/Scenes/HighScore.unity
+    guid: c19fe9a3ba883c14497b5cb506ed4492
+  - enabled: 0
     path: Assets/MiniJeu_Descente/Scenes/Option.unity
     guid: 6e9f60592cb25594398197ab07871dec
-  - enabled: 1
-    path: Assets/FullQuest/FullARTEM.unity
-    guid: cf85f1f16be33cb4193f0548fe06d05e
-  - enabled: 1
-    path: Assets/FullQuest/Crous.unity
-    guid: 7840eb20d95d9bc4aa6bbe4aaa1260b0
+  - enabled: 0
+    path: Assets/Autres/MapCreation/Scenes/Main Scene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
